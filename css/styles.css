@@ -1241,3 +1241,331 @@ svg {
         height: 46px;
     }
 }
+.modern-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 36px;
+
+    background:#13294B;
+
+    color:#fff;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(19,41,75,.25);
+
+}
+
+.modern-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.modern-btn:hover::before{
+
+    left:120%;
+
+}
+
+.modern-btn:hover{
+
+    background:#d4af37;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(212,175,55,.35);
+
+}
+
+.modern-btn i{
+
+    transition:.35s;
+
+    font-style:normal;
+
+}
+
+.modern-btn:hover i{
+
+    transform:translateX(8px);
+
+}
+.button-center{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* =======================================
+        LEADERSHIP TEAM
+======================================= */
+
+.leadership-team{
+
+    padding:100px 0;
+
+    background:#f7f9fc;
+
+}
+
+.section-title{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:#d4af37;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+    margin:15px 0;
+
+    color:#13294B;
+
+    font-size:42px;
+
+}
+
+.section-title p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* GRID */
+
+.leaders-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:40px;
+
+}
+
+
+/* CARD */
+
+.leader-profile{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.leader-profile:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+}
+
+
+/* IMAGE */
+
+.leader-photo{
+
+    height:360px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.leader-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.leader-profile:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* GOLD STRIP */
+
+.leader-photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:#d4af37;
+
+}
+
+
+/* CONTENT */
+
+.leader-details{
+
+    padding:30px;
+
+}
+
+.designation{
+
+    display:inline-block;
+
+    background:#13294B;
+
+    color:#fff;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.leader-details h3{
+
+    font-size:28px;
+
+    color:#13294B;
+
+    margin-bottom:10px;
+
+}
+
+.leader-divider{
+
+    width:65px;
+
+    height:4px;
+
+    background:#d4af37;
+
+    border-radius:20px;
+
+    margin-bottom:22px;
+
+}
+
+.leader-details p{
+
+    color:#666;
+
+    line-height:1.9;
+
+}
+
+
+/* Hover Effect */
+
+.leader-profile:hover .designation{
+
+    background:#d4af37;
+
+    transition:.4s;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .section-title h2{
+
+        font-size:34px;
+
+    }
+
+    .leader-photo{
+
+        height:300px;
+
+    }
+
+}
