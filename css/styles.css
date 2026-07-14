@@ -1688,12 +1688,41 @@ svg {
     grid-template-columns: 320px 1fr;
     gap: 48px;
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 6px double var(--gold) !important;
+    outline: 1px dotted var(--gold-2) !important;
+    outline-offset: -12px !important;
     border-radius: var(--radius);
     padding: 40px;
     box-shadow: var(--shadow);
     margin-bottom: 56px;
     align-items: center;
+    position: relative;
+}
+
+/* Intricate border corners representing classic Indian border flourishes */
+.director-featured-card::before,
+.director-featured-card::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--gold);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.director-featured-card::before {
+    top: 16px;
+    left: 16px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.director-featured-card::after {
+    bottom: 16px;
+    right: 16px;
+    border-left: none;
+    border-top: none;
 }
 
 .director-img-container {
@@ -1880,11 +1909,40 @@ svg {
     padding: 36px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .value-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Shining sheen sweep animation for mission vision value cards */
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.15) 30%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0.15) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.value-card:hover::before {
+    left: 150%;
+    transition: left 0.85s ease-in-out;
 }
 
 .value-header {
@@ -2438,4 +2496,161 @@ svg {
 
 .hero-dots button.is-active {
     background: var(--gold) !important;
+}
+
+/* Card Hover Zoom Scaling and Transitions */
+.service-card,
+.why-card,
+.value-card,
+.testimonial-card,
+.director-card,
+.director-featured-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+}
+
+.service-card:hover,
+.why-card:hover,
+.value-card:hover,
+.testimonial-card:hover,
+.director-card:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--gold) !important;
+}
+
+.director-featured-card:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--gold) !important;
+}
+
+/* Image Container Zoom Scaling */
+.director-img-container,
+.guides-img,
+.image-copy-grid-img {
+    overflow: hidden;
+}
+
+.director-img-container img,
+.guides-img img,
+.image-copy-grid img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.director-img-container:hover img,
+.guides-img:hover img,
+.image-copy-grid:hover img {
+    transform: scale(1.06) !important;
+}
+
+/* Floating WhatsApp styles */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}
+
+/* Tooltip styling */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 76px;
+    white-space: nowrap;
+    background-color: rgba(18, 19, 26, 0.95);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--line);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-whatsapp:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pulsing indicator ring */
+.whatsapp-icon-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: rgba(37, 211, 102, 0.6);
+    z-index: -1;
+    animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Shaking animation triggered on form panel hover (Zoom in + double diagonal wiggle) */
+.form-panel {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+}
+
+.form-panel:hover {
+    transform: scale(1.025) translateY(-6px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--gold) !important;
+    animation: diagonalWiggleEffect 0.75s ease-in-out both;
+}
+
+@keyframes diagonalWiggleEffect {
+    0% { transform: scale(1.025) translateY(-6px) translate(0, 0) rotate(0deg); }
+    15% { transform: scale(1.025) translateY(-6px) translate(-3px, -2px) rotate(-0.5deg); }
+    30% { transform: scale(1.025) translateY(-6px) translate(3px, 2px) rotate(0.5deg); }
+    45% { transform: scale(1.025) translateY(-6px) translate(-3px, -2px) rotate(-0.5deg); }
+    60% { transform: scale(1.025) translateY(-6px) translate(3px, 2px) rotate(0.5deg); }
+    75% { transform: scale(1.025) translateY(-6px) translate(-1px, -1px) rotate(-0.1deg); }
+    100% { transform: scale(1.025) translateY(-6px) translate(0, 0) rotate(0deg); }
+}
+
+/* Horizontal validation error shake on submit click */
+.shake-animation {
+    animation: validationShakeEffect 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes validationShakeEffect {
+    10%, 90% { transform: translate3d(-2px, 0, 0) scale(1.025) translateY(-6px); }
+    20%, 80% { transform: translate3d(4px, 0, 0) scale(1.025) translateY(-6px); }
+    30%, 50%, 70% { transform: translate3d(-8px, 0, 0) scale(1.025) translateY(-6px); }
+    40%, 60% { transform: translate3d(8px, 0, 0) scale(1.025) translateY(-6px); }
 }

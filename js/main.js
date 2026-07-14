@@ -59,6 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => observer.observe(section));
 
+    // Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target); // Trigger animation once
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.05
+    });
+    revealElements.forEach((el) => revealObserver.observe(el));
+
     initHeroSlider();
     initContactForm();
     initTestimonials();
@@ -121,11 +137,16 @@ function initContactForm() {
     if (!form || !note) return;
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
         if (!form.checkValidity()) {
+            event.preventDefault();
             form.reportValidity();
+            form.classList.add("shake-animation");
+            window.setTimeout(() => {
+                form.classList.remove("shake-animation");
+            }, 600);
             return;
         }
+        event.preventDefault();
 
         const data = new FormData(form);
         const name = data.get("name") || "";
@@ -202,11 +223,16 @@ function initTestimonials() {
     render(loadItems());
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
         if (!form.checkValidity()) {
+            event.preventDefault();
             form.reportValidity();
+            form.classList.add("shake-animation");
+            window.setTimeout(() => {
+                form.classList.remove("shake-animation");
+            }, 600);
             return;
         }
+        event.preventDefault();
 
         const data = new FormData(form);
         const item = {
@@ -222,3 +248,5 @@ function initTestimonials() {
         note.textContent = "Thank you. The testimonial preview has been added.";
     });
 }
+
+
