@@ -3,165 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DVK Global services include survey, loss adjustment, risk management, valuation, evaluation and documentation support.">
+    <meta name="description" content="DVK Global services — survey &amp; loss adjustment, risk management, valuation &amp; evaluation, industrial surveys, claim documentation and technical reporting.">
     <title>Services | DVK Global</title>
     <link rel="icon" href="assets/images/logo.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body data-page="services">
-    <header class="site-header">
-        <div class="contact-strip">
-            <div class="container strip-inner">
-                <span class="strip-mark" aria-hidden="true"></span>
-                <a href="tel:+916304487898">Telephone: +91 6304487898</a>
-                <a href="tel:+919440945805">+91 9440945805</a>
-                <a href="mailto:office@dvkgisla.com">E mail: office@dvkgisla.com</a>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+    <div class="utility-bar">
+        <div class="container utility-inner">
+            <div class="utility-left">
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Hyderabad, India &nbsp;|&nbsp; Abu Dhabi, UAE
+            </div>
+            <div class="utility-links">
+                <a href="tel:+916304487898">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                    +91 6304487898
+                </a>
+                <a href="mailto:office@dvkgisla.com">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+                    office@dvkgisla.com
+                </a>
             </div>
         </div>
-        <div class="container nav-shell">
-            <a class="brand" href="index.html" aria-label="DVK Global home">
-                <img src="assets/images/logo.png" alt="DVK Global logo">
-                <span>
-                    <strong>DVK Global</strong>
-                    <small>Survey & Loss Adjustment</small>
-                </span>
-            </a>
-            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav" aria-label="Primary navigation">
-                <a href="index.html" data-nav="home">Home</a>
-                <a href="about.html" data-nav="about">About Us</a>
-                <a href="services.html" data-nav="services">Services</a>
-                <a href="testimonials.html" data-nav="testimonials">Testimonials</a>
-                <a href="contact.html" data-nav="contact">Contact Us</a>
-            </nav>
+    </div>
+    <div class="container nav-bar">
+        <a class="brand" href="index.html" aria-label="DVK Global home">
+            <img class="brand-logo" src="assets/images/logo.png" alt="DVK Global logo">
+            <div class="brand-text">
+                <span class="brand-name">DVK <span>Global</span></span>
+                <span class="brand-tagline">Survey &amp; Loss Adjustment</span>
+            </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="is-active">Services</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html" class="nav-cta">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="--hero-img: url('assets/images/plant-survey.jpg');">
+    <div class="container page-hero-content">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <svg viewBox="0 0 24 24"><path d="M9 18 L15 12 L9 6"/></svg>
+            <span>Services</span>
         </div>
-    </header>
+        <span class="kicker">What We Handle</span>
+        <h1>Our Services</h1>
+        <p>Clear service lanes for complex assignments — each handled with field-first methodology and decision-ready reporting.</p>
+    </div>
+</section>
 
-    <main>
-        <section class="page-hero" style="--hero-img: url('../assets/images/valuation-services.jpg');">
-            <div class="container page-hero-content">
-                <p class="eyebrow">Services</p>
-                <h1>Survey, loss adjustment, risk and valuation support.</h1>
-                <p>Purpose-built service lines for claims, industrial sites, property, machinery and business assets.</p>
-            </div>
-        </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">What we handle</p>
-                    <h2>Clear service lanes for complex assignments.</h2>
+<!-- SERVICES GRID -->
+<section class="section services-section scroll-reveal">
+    <div class="container">
+        <div class="section-head">
+            <span class="kicker">Six Core Disciplines</span>
+            <h2>Every assignment, handled with precision.</h2>
+            <p>DVK Global operates across six focused service areas, each delivering the same standard of evidence collection, technical analysis and clear reporting.</p>
+        </div>
+        <div class="service-grid stagger-children">
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
                 </div>
-                <div class="service-grid">
-                    <article class="service-card" id="loss">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
-                        </span>
-                        <h3>Survey & Loss Adjustment</h3>
-                        <p>Inspection, loss verification, claim document review, damage notes, photographic evidence and report preparation.</p>
-                    </article>
-                    <article class="service-card" id="risk">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 5h12l-2 4 2 4H4"/><path d="M20 19H4"/></svg>
-                        </span>
-                        <h3>Risk Management</h3>
-                        <p>Risk inspection, hazard observation, control review and improvement notes for industrial and commercial locations.</p>
-                    </article>
-                    <article class="service-card" id="valuation">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="m6 8 3 8 3-8"/><path d="m12 8 3 8 3-8"/></svg>
-                        </span>
-                        <h3>Valuation & Evaluation</h3>
-                        <p>Valuation support for plant, machinery, equipment, buildings, stocks and other commercial assets.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-8h6v8"/></svg>
-                        </span>
-                        <h3>Industrial & Property Surveys</h3>
-                        <p>Factory, warehouse, project, machinery and commercial property survey assignments with site-oriented reporting.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 11h6"/><path d="M9 15h6"/><path d="M8 3h8l2 3v15H6V6l2-3Z"/><path d="M8 3v3h8V3"/></svg>
-                        </span>
-                        <h3>Claim Documentation</h3>
-                        <p>File organization, photo logs, supporting records, statements, summaries and practical claim communication.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
-                        </span>
-                        <h3>Technical Reporting</h3>
-                        <p>Final reports, executive summaries and findings that bring the assignment into a decision-ready format.</p>
-                    </article>
+                <h3>Survey &amp; Loss Adjustment</h3>
+                <p>Comprehensive site inspection, loss verification, claim document review, damage notes, photographic evidence and complete report preparation for insurance purposes.</p>
+            </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 5h12l-2 4 2 4H4"/><path d="M20 19H4"/></svg>
                 </div>
-            </div>
-        </section>
-
-        <section class="section dark-band">
-            <div class="container split-grid">
-                <div>
-                    <p class="section-kicker">Assignments we support</p>
-                    <h2>Designed for real-world claim and risk situations.</h2>
+                <h3>Risk Management</h3>
+                <p>Thorough risk inspection, hazard identification and observation, control system review and practical improvement recommendations for industrial and commercial locations.</p>
+            </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="m6 8 3 8 3-8"/><path d="m12 8 3 8 3-8"/></svg>
                 </div>
-                <div class="tag-cloud" aria-label="Service categories">
-                    <span>Fire loss</span>
-                    <span>Machinery breakdown</span>
-                    <span>Industrial property</span>
-                    <span>Stock assessment</span>
-                    <span>Transit and marine support</span>
-                    <span>Plant valuation</span>
-                    <span>Risk inspection</span>
-                    <span>Report review</span>
+                <h3>Valuation &amp; Evaluation</h3>
+                <p>Professional valuation support for plant, machinery, equipment, buildings, stocks and all other commercial assets — including reinstatement and market value assessments.</p>
+            </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-8h6v8"/></svg>
                 </div>
-            </div>
-        </section>
-
-        <section class="section image-copy-section">
-            <div class="container image-copy-grid reverse">
-                <img src="assets/images/loss-adjustment.jpg" alt="Damaged industrial property after a fire incident">
-                <div>
-                    <p class="section-kicker">For urgent losses</p>
-                    <h2>Rapid documentation without losing technical care.</h2>
-                    <p>When an incident disrupts a business, the first steps matter. DVK Global helps collect evidence, understand the damage, coordinate information and prepare reporting that can stand up to review.</p>
-                    <a class="btn btn-secondary" href="contact.html">Share Assignment Details</a>
+                <h3>Industrial &amp; Property Surveys</h3>
+                <p>Factory, warehouse, project, machinery and commercial property survey assignments conducted with thorough site knowledge and clearly organized reporting.</p>
+            </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 11h6"/><path d="M9 15h6"/><path d="M8 3h8l2 3v15H6V6l2-3Z"/><path d="M8 3v3h8V3"/></svg>
                 </div>
-            </div>
-        </section>
+                <h3>Claim Documentation</h3>
+                <p>Complete file organization including photo logs, supporting records, witness statements, technical summaries and all practical claim communication support.</p>
+            </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+                </div>
+                <h3>Technical Reporting</h3>
+                <p>Final reports, executive summaries and technical findings that convert complex site data into a format that decision makers can immediately read and rely on.</p>
+            </article>
+        </div>
+    </div>
+</section>
 
- 
-    </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
-                <img class="footer-logo" src="assets/images/logo.png" alt="DVK Global logo">
-                <p>Independent survey, loss adjustment, risk management and valuation support.</p>
+<!-- INDUSTRIES COVERED -->
+<section class="industries-section">
+    <div class="container">
+        <span class="kicker">Assignment Types</span>
+        <h2>Designed for real-world claim and risk situations.</h2>
+        <p class="sub-text">We work across a broad range of loss types and asset categories — always bringing the same structured, evidence-led approach.</p>
+        <div class="tag-cloud">
+            <span>Fire Loss</span>
+            <span>Machinery Breakdown</span>
+            <span>Industrial Property</span>
+            <span>Stock Assessment</span>
+            <span>Transit &amp; Marine</span>
+            <span>Plant Valuation</span>
+            <span>Risk Inspection</span>
+            <span>Report Review</span>
+            <span>Engineering Claims</span>
+            <span>Liability Claims</span>
+            <span>Business Interruption</span>
+            <span>Energy Claims</span>
+            <span>Construction Projects</span>
+            <span>Equipment Breakdown</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- URGENT LOSS CTA -->
+<section class="section scroll-reveal">
+    <div class="container split-grid">
+        <div class="split-img">
+            <img src="assets/images/loss-adjustment.jpg" alt="Damaged industrial property after a fire incident">
+        </div>
+        <div class="split-body">
+            <span class="kicker">For Urgent Losses</span>
+            <h2>Rapid documentation without losing technical care.</h2>
+            <p>When an incident disrupts a business, the first steps matter. DVK Global helps collect evidence, understand the damage, coordinate information and prepare reporting that can stand up to review.</p>
+            <p>Our team is experienced in urgent assignments — from fire damage and machinery failures to complex liability situations. We move fast without compromising accuracy.</p>
+            <a class="btn btn-primary" href="contact.html">Share Assignment Details</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="section process-section scroll-reveal">
+    <div class="container">
+        <div style="max-width:600px; margin-bottom:48px;">
+            <span class="kicker">How We Work</span>
+            <h2>A calm, structured workflow for every assignment.</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <span class="step-label">Inspect</span>
+                <h4>Site Visit &amp; Observation</h4>
+                <p>Visit the site, understand the incident scope and capture thorough field observations and photographic records.</p>
             </div>
-            <div>
-                <h2>Pages</h2>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html">Contact Us</a>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <span class="step-label">Document</span>
+                <h4>Evidence Organization</h4>
+                <p>Organize photographs, records, statements and technical evidence into a structured, accessible file for all parties.</p>
             </div>
-            <div>
-                <h2>Contact</h2>
-                <a href="tel:+916304487898">+91 6304487898</a>
-                <a href="tel:+919440945805">+91 9440945805</a>
-                <a href="mailto:office@dvkgisla.com">office@dvkgisla.com</a>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <span class="step-label">Evaluate</span>
+                <h4>Structured Analysis</h4>
+                <p>Review loss, valuation or risk inputs with a structured, independent approach that keeps accuracy at the forefront.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <span class="step-label">Report</span>
+                <h4>Decision-Ready Findings</h4>
+                <p>Deliver clear findings, practical notes and supporting material in a format decision makers can act on immediately.</p>
             </div>
         </div>
-        <div class="container footer-bottom">
-            <span>© <span data-year></span> DVK Global. All rights reserved.</span>
-        </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="js/main.js"></script>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <img src="assets/images/logo.png" alt="DVK Global logo">
+            <p>Independent survey, loss adjustment, risk management and valuation support across India and the Middle East.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Pages</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Survey &amp; Loss Adjustment</a>
+            <a href="services.html">Risk Management</a>
+            <a href="services.html">Valuation &amp; Evaluation</a>
+            <a href="services.html">Industrial Surveys</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="tel:+916304487898"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>+91 6304487898</a>
+            <a href="mailto:office@dvkgisla.com"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>office@dvkgisla.com</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© <span data-year></span> DVK Global. All rights reserved.</span>
+        <span>Powered by <a href="#" rel="noopener">SAMify</a></span>
+    </div>
+</footer>
+
+<a href="https://wa.me/916304487898" class="floating-whatsapp" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" fill="currentColor" stroke="none"/></svg>
+</a>
+
+<script src="js/main.js"></script>
 </body>
 </html>
