@@ -12,17 +12,30 @@
     <header class="site-header">
         <div class="contact-strip">
             <div class="container strip-inner">
-                <span class="strip-mark" aria-hidden="true"></span>
-                <a href="tel:+916304487898">Telephone: +91 6304487898</a>
-                <a href="tel:+919440945805">+91 9440945805</a>
-                <a href="mailto:office@dvkgisla.com">E mail: office@dvkgisla.com</a>
+                <div class="strip-logo-mark" title="DVK Global Engineering">
+                    <svg class="strip-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                        <path d="M8 11l4-3 4 3v5H8z"/>
+                    </svg>
+                </div>
+                <div class="strip-icons">
+                    <a href="tel:+916304487898" aria-label="Telephone: +91 6304487898" title="Telephone: +91 6304487898">
+                        <svg class="strip-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                    </a>
+                    <a href="tel:+919440945805" aria-label="Mobile: +91 9440945805" title="Mobile: +91 9440945805">
+                        <svg class="strip-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke-width="2" stroke="currentColor" fill="none"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2" stroke="currentColor"/></svg>
+                    </a>
+                    <a href="mailto:office@dvkgisla.com" aria-label="Email: office@dvkgisla.com" title="Email: office@dvkgisla.com">
+                        <svg class="strip-icon-svg" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="container nav-shell">
             <a class="brand" href="index.html" aria-label="DVK Global home">
                 <img src="assets/images/logo.png" alt="DVK Global logo">
                 <span>
-                    <strong>DVK Global</strong>
+                    <strong>DVK <span class="brand-accent">Global</span></strong>
                     <small>Survey & Loss Adjustment</small>
                 </span>
             </a>
@@ -32,66 +45,66 @@
                 <span></span>
             </button>
             <nav class="main-nav" aria-label="Primary navigation">
-                <a href="index.html" data-nav="home">Home</a>
-                <a href="about.html" data-nav="about">About Us</a>
-                <a href="services.html" data-nav="services">Services</a>
-                <a href="testimonials.html" data-nav="testimonials">Testimonials</a>
-                <a href="contact.html" data-nav="contact">Contact Us</a>
+                <a href="#home" data-nav="home">Home</a>
+                <a href="#about" data-nav="about">About Us</a>
+                <a href="#director" data-nav="director">Director</a>
+                <a href="#services" data-nav="services">Services</a>
+                <a href="#testimonials" data-nav="testimonials">Testimonials</a>
+                <a href="#contact" data-nav="contact">Contact Us</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="home-hero" aria-label="DVK Global featured services">
-            <div class="hero-slide is-active" style="--bg: url('../assets/images/plant-survey.jpg');">
+        <section id="home" class="home-hero" aria-label="DVK Global featured services">
+            <div class="hero-slide is-active" style="--bg: url('assets/images/plant-survey.jpg');">
                 <div class="container hero-content">
                     <p class="eyebrow">Independent industrial claim support</p>
                     <h1>Survey, loss adjustment and risk clarity for critical decisions.</h1>
                     <p>DVK Global supports insurers, businesses and asset owners with disciplined field inspection, documentation, valuation and reporting.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="contact.html">Request Assessment</a>
-                        <a class="btn btn-ghost" href="services.html">View Services</a>
+                        <a class="btn btn-primary" href="#contact">Request Assessment</a>
+                        <a class="btn btn-ghost" href="#services">View Services</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="--bg: url('../assets/images/risk-management.jpg');">
+            <div class="hero-slide" style="--bg: url('assets/images/risk-management.jpg');">
                 <div class="container hero-content">
                     <p class="eyebrow">Risk management services</p>
                     <h2>Practical risk insight for plants, properties and operations.</h2>
                     <p>From industrial audits to claim readiness, our work turns site evidence into clear action.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="services.html#risk">Explore Risk Work</a>
+                        <a class="btn btn-primary" href="#services">Explore Risk Work</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="--bg: url('../assets/images/valuation-services.jpg');">
+            <div class="hero-slide" style="--bg: url('assets/images/valuation-services.jpg');">
                 <div class="container hero-content">
                     <p class="eyebrow">Valuation and evaluation</p>
                     <h2>Asset evaluation shaped by field observation and documentation.</h2>
                     <p>We bring structure to machinery, property and commercial valuation assignments.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="services.html#valuation">See Valuation</a>
+                        <a class="btn btn-primary" href="#services">See Valuation</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="--bg: url('../assets/images/loss-adjustment.jpg');">
+            <div class="hero-slide" style="--bg: url('assets/images/loss-adjustment.jpg');">
                 <div class="container hero-content">
                     <p class="eyebrow">Loss adjustment services</p>
                     <h2>Calm, methodical claim support when the site is under pressure.</h2>
                     <p>We document the incident, verify the extent of loss and prepare reports that are easy to act on.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="contact.html">Contact Office</a>
+                        <a class="btn btn-primary" href="#contact">Contact Office</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-slide" style="--bg: url('../assets/images/industrial-audit.jpg');">
-                <!-- <div class="slider"> -->
+            <div class="hero-slide" style="--bg: url('assets/images/industrial-audit.jpg');">
                 <div class="container hero-content">
                     <p class="eyebrow">Industrial assessment</p>
                     <h2>Technical visits, site notes and reporting built for accountability.</h2>
                     <p>Every assignment is handled with attention to evidence, timelines and client communication.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="about.html">Know DVK Global</a>
+                        <a class="btn btn-primary" href="#about">Know DVK Global</a>
                     </div>
                 </div>
             </div>
@@ -124,15 +137,12 @@
             </div>
         </section>
 
-        <section class="section split-section">
+        <section id="about" class="section split-section">
             <div class="container split-grid">
                 <div>
                     <p class="section-kicker">Built for field reality</p>
                     <h2>Professional support when a site, claim or asset needs a clear opinion.</h2>
                     <p>DVK Global brings together technical observation, claim discipline and measured communication. The work is practical, documented and designed to help stakeholders move from uncertainty to decision.</p>
-                    <a class="text-link" href="about.html">Learn about the company
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-                    </a>
                 </div>
                 <div class="feature-panel">
                     <ul class="check-list">
@@ -143,42 +153,256 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Integrated Company Profile (from about.html) -->
+            <div class="container about-profile-grid">
+                <div class="profile-title-block">
+                    <p class="section-kicker">Company Profile</p>
+                    <h2>A professional partner for claim, valuation and risk assignments.</h2>
+                </div>
+                <div class="profile-content-block">
+                    <p>DVK Global works across survey and loss adjustment, risk management, valuation and evaluation services. The company is built around careful site visits, reliable documentation and communication that helps insurers, businesses and asset owners make informed decisions.</p>
+                    <p>Every assignment begins with the reality on the ground: the condition of the site, the available records, the nature of the loss or asset and the questions stakeholders need answered. From there, the work is organized into clear findings, photographs, notes and reports.</p>
+                </div>
+            </div>
+
+            <!-- Integrated Guidelines & Mini Stats (from about.html) -->
+            <div class="container guides-grid">
+                <div class="guides-img">
+                    <img src="assets/images/valuation-services.jpg" alt="Industrial machinery and plant equipment">
+                </div>
+                <div class="guides-content">
+                    <p class="section-kicker">What Guides the Work</p>
+                    <h2>Evidence first, decision ready.</h2>
+                    <p>DVK Global focuses on the details that matter: what happened, what changed, what records support the claim or valuation, and what a decision maker needs to understand next.</p>
+                    <div class="mini-stats" aria-label="DVK Global service strengths">
+                        <span><strong>Survey</strong> Site review and incident notes</span>
+                        <span><strong>Adjust</strong> Loss assessment and reporting</span>
+                        <span><strong>Evaluate</strong> Valuation and risk insight</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="section muted-section">
+        <!-- Leadership / Director Section -->
+        <section id="director" class="director-section section">
             <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Core services</p>
-                    <h2>Focused expertise for claims, risks and assets.</h2>
+                <div class="section-heading center">
+                    <p class="section-kicker">Leadership</p>
+                    <h2>Meet Our Technical Director</h2>
+                    <p class="section-intro">Our technical leadership combines decades of experience in engineering surveys, insurance claims management, valuation services, and risk assessment.</p>
                 </div>
-                <div class="service-grid compact">
+                
+                <!-- Featured Director: Eng. K. David Vijay Kumar -->
+                <div class="director-featured-card">
+                    <div class="director-img-container">
+                        <img src="assets/images/director1.jpg" alt="Eng. K. David Vijay Kumar">
+                    </div>
+                    <div class="director-info">
+                        <span class="director-badge">Director Technical & Senior Loss Adjuster</span>
+                        <h3>Eng. K. David Vijay Kumar</h3>
+                        <p class="director-quals">M.Tech., C. E., FIIISLA, FIV, LIII., CFPS - NFPA</p>
+                        
+                        <div class="director-divider"></div>
+                        
+                        <ul class="director-bullets">
+                            <li><strong>30 years of rich experience</strong> as Surveyor, Loss Adjuster and Valuer in the Insurance Industry, including 18 years of UAE expertise.</li>
+                            <li>Specialized in <strong>Engineering, Property, Fire, BI/LOP, Liability and Energy Claims</strong>.</li>
+                        </ul>
+
+                        <div class="director-contact-info">
+                            <a href="tel:+97126448313" class="director-phone">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                                <span><strong>Off:</strong> +971 2 6448313</span>
+                            </a>
+                            <a href="tel:+97150819909" class="director-phone">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                                <span><strong>Mob:</strong> +971 50 819909</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Directors -->
+                <div class="directors-grid-secondary">
+                    <div class="director-card">
+                        <div class="director-card-img">
+                            <img src="assets/images/director2.jpeg" alt="Survey Director">
+                        </div>
+                        <div class="director-card-body">
+                            <span class="designation">Survey Director</span>
+                            <h3>Mr. Director Name</h3>
+                            <p>Specialized in engineering surveys, machinery inspection, fire investigations and technical reporting. Dedicated to ensuring every assessment meets the highest professional standards.</p>
+                        </div>
+                    </div>
+                    <div class="director-card">
+                        <div class="director-card-img">
+                            <img src="assets/images/director3.jpeg" alt="Director">
+                        </div>
+                        <div class="director-card-body">
+                            <span class="designation">Director</span>
+                            <h3>Mr. Director Name</h3>
+                            <p>Expert in valuation services, commercial inspections, industrial audits and client advisory, helping businesses make informed and confident decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values Section -->
+        <section id="values" class="values-section section muted-section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-kicker">Core Philosophy</p>
+                    <h2>Mission, Vision & Values</h2>
+                </div>
+                <div class="values-grid">
+                    <article class="value-card">
+                        <div class="value-header">
+                            <span class="value-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zM12 6l7.5 13h-15L12 6z"/></svg>
+                            </span>
+                            <h3>Our Mission</h3>
+                        </div>
+                        <p>Technical excellence and professional and timely delivery of services.</p>
+                    </article>
+                    
+                    <article class="value-card">
+                        <div class="value-header">
+                            <span class="value-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </span>
+                            <h3>Our Vision</h3>
+                        </div>
+                        <p>Leading service provider in property, Engineering, Marine & liability claims in Middle-East & Asia.</p>
+                    </article>
+                    
+                    <article class="value-card">
+                        <div class="value-header">
+                            <span class="value-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                            </span>
+                            <h3>Our Values</h3>
+                        </div>
+                        <p>Dedication, Pro-active loss minimization, Timely completion of tasks.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-kicker">What We Handle</p>
+                    <h2>Clear service lanes for complex assignments.</h2>
+                </div>
+                <div class="service-grid">
                     <article class="service-card">
                         <span class="service-icon">
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
                         </span>
-                        <h3>Loss Adjustment</h3>
-                        <p>Support for claim assessment, quantum review, documentation and final reporting.</p>
+                        <h3>Survey & Loss Adjustment</h3>
+                        <p>Inspection, loss verification, claim document review, damage notes, photographic evidence and report preparation.</p>
                     </article>
                     <article class="service-card">
                         <span class="service-icon">
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-8h6v8"/></svg>
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 5h12l-2 4 2 4H4"/><path d="M20 19H4"/></svg>
                         </span>
-                        <h3>Industrial Surveys</h3>
-                        <p>On-site observation for factories, commercial properties, machinery and plant assets.</p>
+                        <h3>Risk Management</h3>
+                        <p>Risk inspection, hazard observation, control review and improvement notes for industrial and commercial locations.</p>
                     </article>
                     <article class="service-card">
                         <span class="service-icon">
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="m6 8 3 8 3-8"/><path d="m12 8 3 8 3-8"/></svg>
                         </span>
-                        <h3>Valuation</h3>
-                        <p>Structured valuation and evaluation for business, property and technical assets.</p>
+                        <h3>Valuation & Evaluation</h3>
+                        <p>Valuation support for plant, machinery, equipment, buildings, stocks and other commercial assets.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-8h6v8"/></svg>
+                        </span>
+                        <h3>Industrial & Property Surveys</h3>
+                        <p>Factory, warehouse, project, machinery and commercial property survey assignments with site-oriented reporting.</p>
                     </article>
                     <article class="service-card">
                         <span class="service-icon">
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 11h6"/><path d="M9 15h6"/><path d="M8 3h8l2 3v15H6V6l2-3Z"/><path d="M8 3v3h8V3"/></svg>
                         </span>
-                        <h3>Risk Reports</h3>
-                        <p>Practical reporting that highlights exposures, controls and improvement priorities.</p>
+                        <h3>Claim Documentation</h3>
+                        <p>File organization, photo logs, supporting records, statements, summaries and practical claim communication.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon">
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+                        </span>
+                        <h3>Technical Reporting</h3>
+                        <p>Final reports, executive summaries and findings that bring the assignment into a decision-ready format.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Served Section -->
+        <section id="industries" class="section dark-band">
+            <div class="container split-grid">
+                <div>
+                    <p class="section-kicker">Assignments We Support</p>
+                    <h2>Designed for real-world claim and risk situations.</h2>
+                </div>
+                <div class="tag-cloud" aria-label="Service categories">
+                    <span>Fire loss</span>
+                    <span>Machinery breakdown</span>
+                    <span>Industrial property</span>
+                    <span>Stock assessment</span>
+                    <span>Transit and marine support</span>
+                    <span>Plant valuation</span>
+                    <span>Risk inspection</span>
+                    <span>Report review</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Urgent Loss Copy/Image block (from services.html) -->
+        <section class="section">
+            <div class="container image-copy-grid reverse">
+                <img src="assets/images/loss-adjustment.jpg" alt="Damaged industrial property after a fire incident">
+                <div>
+                    <p class="section-kicker">For urgent losses</p>
+                    <h2>Rapid documentation without losing technical care.</h2>
+                    <p>When an incident disrupts a business, the first steps matter. DVK Global helps collect evidence, understand the damage, coordinate information and prepare reporting that can stand up to review.</p>
+                    <a class="btn btn-secondary" href="#contact">Share Assignment Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="section muted-section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-kicker">Why Choose Us</p>
+                    <h2>Four core pillars guiding DVK Global.</h2>
+                </div>
+                <div class="why-choose-grid">
+                    <article class="why-card">
+                        <span class="why-number">01</span>
+                        <h3>Independent thinking</h3>
+                        <p>Observations and reports are shaped by evidence, not assumption.</p>
+                    </article>
+                    <article class="why-card">
+                        <span class="why-number">02</span>
+                        <h3>Clear documentation</h3>
+                        <p>Photos, records and site notes are organized so the file remains useful after the visit.</p>
+                    </article>
+                    <article class="why-card">
+                        <span class="why-number">03</span>
+                        <h3>Responsive coordination</h3>
+                        <p>Communication stays practical, timely and focused on the assignment outcome.</p>
+                    </article>
+                    <article class="why-card">
+                        <span class="why-number">04</span>
+                        <h3>Industrial awareness</h3>
+                        <p>Assignments are approached with respect for plant operations, machinery and property conditions.</p>
                     </article>
                 </div>
             </div>
@@ -212,14 +436,147 @@
         </section>
 
     
-    <div class="button-center">
-        <a href="about.html#leadership" class="modern-btn">
-            Meet Our Leadership
-            <i>→</i>
-        </a>
-    </div>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section muted-section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-kicker">Client Voices</p>
+                    <h2>Published Testimonials</h2>
+                </div>
+                <div class="testimonial-grid" id="testimonialGrid" aria-live="polite">
+                    <article class="testimonial-card placeholder-card">
+                        <span>Slot 01</span>
+                        <p>Approved client feedback can be published here with the client name, role and service category.</p>
+                    </article>
+                    <article class="testimonial-card placeholder-card">
+                        <span>Slot 02</span>
+                        <p>Use this space for survey, loss adjustment, valuation or risk management testimonials.</p>
+                    </article>
+                    <article class="testimonial-card placeholder-card">
+                        <span>Slot 03</span>
+                        <p>Client comments can be added as they are approved for publication.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-</section>
+        <!-- Testimonial Submission Section -->
+        <section class="section">
+            <div class="container testimonial-form-grid">
+                <div>
+                    <p class="section-kicker">Add Feedback</p>
+                    <h2>Share a Testimonial</h2>
+                    <p>Share feedback from a recent survey, loss adjustment, valuation or risk management assignment.</p>
+                </div>
+                <form class="form-panel" id="testimonialForm">
+                    <label for="testimonialName">Name</label>
+                    <input id="testimonialName" name="name" type="text" placeholder="Client or company name" required>
+
+                    <label for="testimonialRole">Role or service</label>
+                    <input id="testimonialRole" name="role" type="text" placeholder="Example: Risk inspection client" required>
+
+                    <label for="testimonialMessage">Testimonial</label>
+                    <textarea id="testimonialMessage" name="message" rows="5" placeholder="Write the feedback here" required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Publish Preview</button>
+                    <p class="form-note" id="testimonialNote" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section muted-section">
+            <div class="container contact-grid">
+                <div>
+                    <p class="section-kicker">Office Contact</p>
+                    <h2>Fast ways to reach the team.</h2>
+                    <div class="contact-card-grid">
+                        <a class="contact-card" href="tel:+916304487898">
+                            <span class="contact-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                            </span>
+                            <span><strong>Call</strong>+91 6304487898</span>
+                        </a>
+                        <a class="contact-card" href="tel:+919440945805">
+                            <span class="contact-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                            </span>
+                            <span><strong>Telephone</strong>+91 9440945805</span>
+                        </a>
+                        <a class="contact-card" href="mailto:office@dvkgisla.com">
+                            <span class="contact-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+                            </span>
+                            <span><strong>Email</strong>office@dvkgisla.com</span>
+                        </a>
+                        <a class="contact-card" href="https://wa.me/916304487898" target="_blank" rel="noreferrer">
+                            <span class="contact-icon">
+                                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8.1 8.1 0 0 1-11.91 7.13L3 20l1.4-4.94A8.11 8.11 0 1 1 20 11.5Z"/><path d="M9 8.8c.2-.46.34-.47.64-.47h.48c.16 0 .38.06.58.43.2.38.68 1.33.74 1.43.05.1.09.23.02.37-.08.15-.12.23-.24.36-.12.13-.25.29-.36.39-.12.12-.25.25-.11.48.14.24.61 1.01 1.31 1.63.9.8 1.66 1.05 1.9 1.17.24.12.38.1.52-.06.15-.17.6-.7.76-.94.16-.24.32-.2.54-.12.23.08 1.43.67 1.67.8.25.12.41.18.47.28.06.1.06.58-.14 1.14-.2.56-1.16 1.07-1.62 1.11-.42.04-.96.06-1.55-.1-.36-.1-.82-.27-1.41-.52-2.48-1.07-4.1-3.57-4.22-3.73-.12-.16-1-1.33-1-2.54 0-1.2.63-1.8.85-2.04.22-.24.48-.3.64-.3"/></svg>
+                            </span>
+                            <span><strong>WhatsApp</strong>Message office</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="form-panel contact-form" id="contactForm">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="your@email.com" required>
+
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+91">
+
+                    <label for="service">Service required</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option>Survey & Loss Adjustment</option>
+                        <option>Risk Management</option>
+                        <option>Valuation & Evaluation</option>
+                        <option>Industrial / Property Survey</option>
+                        <option>Claim Documentation</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Briefly describe the assignment" required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Send Enquiry</button>
+                    <p class="form-note" id="contactNote" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="section location-section">
+            <div class="container">
+                <div class="location-heading">
+                    <span class="location-symbol">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    </span>
+                    <div>
+                        <p class="section-kicker">Location</p>
+                        <h2>DVK Global Office Location</h2>
+                    </div>
+                </div>
+                <div class="map-shell">
+                    <iframe title="DVK Global location map" src="https://www.google.com/maps?q=DVK%20Global%20India&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <a class="text-link map-link" href="https://www.google.com/maps/search/?api=1&query=DVK%20Global%20India" target="_blank" rel="noreferrer">Open location in Google Maps
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Thanks Band -->
+        <section class="thanks-band" id="thanks">
+            <div class="container thanks-inner">
+                <p class="section-kicker">Thank you</p>
+                <h2>Thank you for contacting DVK Global.</h2>
+                <p>The office will review your message and coordinate the next step for your assignment.</p>
+                <a class="btn btn-primary" href="mailto:office@dvkgisla.com">Email Directly</a>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -229,11 +586,13 @@
                 <p>Independent survey, loss adjustment, risk management and valuation support.</p>
             </div>
             <div>
-                <h2>Pages</h2>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html">Contact Us</a>
+                <h2>Sections</h2>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#director">Director</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact Us</a>
             </div>
             <div>
                 <h2>Contact</h2>
@@ -244,6 +603,7 @@
         </div>
         <div class="container footer-bottom">
             <span>© <span data-year></span> DVK Global. All rights reserved.</span>
+            <span>Powered by <a href="#" target="_blank" rel="noopener">SAMify</a></span>
         </div>
     </footer>
 

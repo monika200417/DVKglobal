@@ -1,15 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const page = document.body.dataset.page;
-    document.querySelectorAll("[data-nav]").forEach((link) => {
-        if (link.dataset.nav === page) {
-            link.classList.add("is-active");
-        }
-    });
-
+    // Current year updater
     document.querySelectorAll("[data-year]").forEach((target) => {
         target.textContent = new Date().getFullYear();
     });
 
+    // Mobile menu toggle
     const menuToggle = document.querySelector(".menu-toggle");
     if (menuToggle) {
         menuToggle.addEventListener("click", () => {
@@ -26,6 +21,43 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.main-nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer to highlight active navigation link based on scroll position
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".main-nav a");
+    const observerOptions = {
+        root: null,
+        rootMargin: "-30% 0px -50% 0px",
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach((link) => {
+                    link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
 
     initHeroSlider();
     initContactForm();
