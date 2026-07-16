@@ -1973,3 +1973,252 @@ svg {
 .testimonial-form-wrap .section-head h2 {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
+
+/* ============================================================
+   HIGHLIGHTED VALUE CARDS
+   ============================================================ */
+.values-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 860px) {
+    .values-detail-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+    .values-detail-grid { grid-template-columns: 1fr; }
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(0, 149, 218, 0.30);
+    border-top: 3px solid rgba(0, 149, 218, 0.80);
+    border-radius: 16px;
+    padding: 24px 22px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(0,149,218,0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(0, 149, 218, 0.80);
+    box-shadow: 0 12px 36px rgba(0, 149, 218, 0.25), 0 0 0 1px rgba(0,149,218,0.20);
+}
+
+.value-card:hover::before { opacity: 1; }
+
+/* 7th card spans full remaining width */
+.value-card-wide {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.value-card-wide .value-card-emoji {
+    flex-shrink: 0;
+}
+
+.value-card-wide h4,
+.value-card-wide p {
+    margin: 0;
+}
+
+.value-card-emoji {
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 149, 218, 0.18);
+    border: 1.5px solid rgba(0, 149, 218, 0.40);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.value-card:hover .value-card-emoji {
+    background: rgba(0, 149, 218, 0.30);
+    transform: scale(1.1) rotate(-4deg);
+}
+
+.value-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: 0.01em;
+}
+
+.value-card p {
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ============================================================
+   ABOUT SECTION — ANIMATED LOGO VISUAL
+   ============================================================ */
+.about-anim-wrap {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pulsing rings */
+.anim-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 149, 218, 0.25);
+    animation: ringPulse 3s ease-in-out infinite;
+}
+
+.anim-ring-1 { width: 160px; height: 160px; animation-delay: 0s; }
+.anim-ring-2 { width: 240px; height: 240px; animation-delay: 0.8s; border-color: rgba(0,149,218,0.15); }
+.anim-ring-3 { width: 320px; height: 320px; animation-delay: 1.6s; border-color: rgba(0,149,218,0.08); }
+
+@keyframes ringPulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50%       { transform: scale(1.06); opacity: 1; }
+}
+
+/* Central shield */
+.anim-shield {
+    position: relative;
+    z-index: 5;
+    animation: shieldFloat 4s ease-in-out infinite;
+}
+
+.shield-svg {
+    width: 130px;
+    height: 150px;
+    filter: drop-shadow(0 0 18px rgba(0,149,218,0.55)) drop-shadow(0 0 6px rgba(245,166,35,0.35));
+}
+
+@keyframes shieldFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+}
+
+/* Orbiting service icon containers */
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    animation: orbitSpin 18s linear infinite;
+    transform-origin: center center;
+}
+
+.orbit-1 { animation-duration: 14s; }
+.orbit-2 { animation-duration: 16s; animation-direction: reverse; }
+.orbit-3 { animation-duration: 20s; }
+.orbit-4 { animation-duration: 12s; animation-direction: reverse; }
+.orbit-5 { animation-duration: 22s; }
+
+@keyframes orbitSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.orbit-icon {
+    position: absolute;
+    top: -18px;
+    left: calc(50% - 18px);
+    width: 36px;
+    height: 36px;
+    background: rgba(10, 30, 60, 0.95);
+    border: 1.5px solid rgba(0, 149, 218, 0.60);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(0,149,218,0.25);
+    /* Counter-rotate so icon stays upright */
+    animation: counterSpin 18s linear infinite;
+}
+
+.orbit-1 .orbit-icon { animation-duration: 14s; animation-direction: normal; }
+.orbit-2 .orbit-icon { animation-duration: 16s; animation-direction: reverse; }
+.orbit-3 .orbit-icon { animation-duration: 20s; }
+.orbit-4 .orbit-icon { animation-duration: 12s; animation-direction: reverse; }
+.orbit-5 .orbit-icon { animation-duration: 22s; }
+
+@keyframes counterSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
+/* Position each orbit at different angles using rotation offset */
+.orbit-1 { transform: rotate(0deg); }
+.orbit-2 { transform: rotate(72deg); }
+.orbit-3 { transform: rotate(144deg); }
+.orbit-4 { transform: rotate(216deg); }
+.orbit-5 { transform: rotate(288deg); }
+
+/* Floating stat badges */
+.anim-badge {
+    position: absolute;
+    background: rgba(10, 30, 60, 0.92);
+    border: 1.5px solid rgba(0, 149, 218, 0.55);
+    border-radius: 12px;
+    padding: 8px 14px;
+    text-align: center;
+    z-index: 10;
+    animation: badgeFloat 3.5s ease-in-out infinite;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.anim-badge-tl { top: 8px;  left: 4px;   animation-delay: 0s; }
+.anim-badge-tr { top: 8px;  right: 4px;  animation-delay: 0.8s; }
+.anim-badge-bl { bottom: 8px; left: 4px; animation-delay: 1.6s; }
+.anim-badge-br { bottom: 8px; right: 4px; animation-delay: 2.4s; }
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-5px); }
+}
+
+.anim-badge-num {
+    display: block;
+    color: #0095da;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.anim-badge-lbl {
+    display: block;
+    color: rgba(255,255,255,0.60);
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+    .about-anim-wrap { width: 280px; height: 280px; }
+    .anim-ring-3 { display: none; }
+}
