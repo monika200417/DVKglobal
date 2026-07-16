@@ -369,8 +369,8 @@ svg {
     align-items: center;
     padding: 0;
     background-size: cover;
-    background-position: center right;
-    background-image: var(--bg);
+    background-position: center;
+    /* background-image is set directly via inline style on each slide */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.75s ease, visibility 0.75s ease;
@@ -391,7 +391,7 @@ svg {
 
 /* Primary large sky-blue shape */
 .hero-slide::before {
-    background: rgba(100, 185, 235, 0.72);
+    background: rgba(82, 170, 235, 0.72);
     clip-path: polygon(0 0, 58% 0, 36% 100%, 0 100%);
 }
 
@@ -534,7 +534,7 @@ svg {
 
 .stats-inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
 }
 
