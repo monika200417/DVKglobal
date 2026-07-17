@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVK Global — Corporate Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800;900&family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f2137;     /* Midnight Navy */
+            --secondary: #c5a059;   /* Matte Gold */
+            --accent: #0095da;      /* Sky Blue */
+            --accent-light: #e0f2fe;/* Light Blue strip background */
+            --cream: #fcfbf7;       /* Soft Alabaster/Ivory */
+            --white: #ffffff;
+            --bg: #111e2e;          /* Dark view background */
+            --text: #475569;        /* Slate text */
+            --border: #dde3ec;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 0;
+        }
+
+        .doc-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* ── Page Sheet (A4 Proportion) ── */
+        .page {
+            background: var(--cream);
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            border-radius: 8px;
+            position: relative;
+            padding: 20mm 16mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            border: 1px solid rgba(15, 33, 55, 0.1);
+        }
+
+        /* ── Symmetrical Geometric corner shapes on every page ── */
+        .page-corner-tr {
+            position: absolute;
+            top: 0; right: 0;
+            width: 130px; height: 130px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .page-corner-tr::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 100%; height: 100%;
+            background: var(--primary);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            opacity: 0.10;
+        }
+        .page-corner-tr::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 75%; height: 75%;
+            background: var(--secondary);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            opacity: 0.22;
+        }
+
+        .page-corner-bl {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 130px; height: 130px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .page-corner-bl::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--primary);
+            clip-path: polygon(0 100%, 0 0, 100% 100%);
+            opacity: 0.10;
+        }
+        .page-corner-bl::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 75%; height: 75%;
+            background: var(--secondary);
+            clip-path: polygon(0 100%, 0 0, 100% 100%);
+            opacity: 0.22;
+        }
+
+        /* ── UNIQUE ATTENTION-GRABBING HEADER CARD ── */
+        .premium-header-card {
+            background: linear-gradient(135deg, #081220 0%, #162a45 100%);
+            border-radius: 12px;
+            padding: 20px 28px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 22px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(10,23,39,0.25);
+            z-index: 10;
+            margin-bottom: 12px;
+        }
+
+        /* Geometric overlays inside header background */
+        .premium-header-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 280px; height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, transparent 100%);
+            opacity: 0.16;
+            transform: skewX(-20deg);
+            transform-origin: top right;
+            pointer-events: none;
+        }
+
+        .premium-header-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; right: 80px;
+            width: 100px; height: 10px;
+            background: var(--secondary);
+            opacity: 0.25;
+            transform: skewX(-20deg);
+            pointer-events: none;
+        }
+
+        .header-logo-container {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--secondary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 5;
+            padding: 6px;
+        }
+
+        .header-logo-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .header-title-container {
+            z-index: 5;
+        }
+
+        .header-title-container h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: 2px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-title-container .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 2px;
+            display: inline-block;
+        }
+
+        .header-meta-box {
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 16px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.7rem;
+            line-height: 1.45;
+            z-index: 5;
+        }
+
+        .header-meta-box strong {
+            color: var(--secondary);
+        }
+
+        /* ── Section Title Banner (Solid Light Blue, matching screenshot) ── */
+        .section-title-banner {
+            background: var(--accent-light);
+            color: var(--primary);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-left: 4px solid var(--accent);
+            z-index: 5;
+            margin: 10px 0 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* ── Layout & Typography ── */
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 0.78rem;
+            line-height: 1.55;
+            color: var(--text);
+            text-align: justify;
+            margin-bottom: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 6px;
+            padding: 10px 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+            z-index: 5;
+        }
+
+        .info-card.gold-accent {
+            border-top-color: var(--secondary);
+        }
+
+        .info-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .info-card p {
+            font-size: 0.74rem;
+            margin: 0;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        /* Checklist */
+        .check-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .check-list li {
+            font-size: 0.74rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            color: var(--text);
+        }
+
+        .check-list li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .special-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .special-badge {
+            background: rgba(15, 33, 55, 0.02);
+            border: 1px solid rgba(15, 33, 55, 0.05);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .special-badge strong {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.76rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .special-badge p {
+            font-size: 0.64rem;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* Team & tags */
+        .tags-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .team-tag {
+            background: rgba(15, 33, 55, 0.03);
+            border: 1px solid rgba(15, 33, 55, 0.06);
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        /* Office Address layouts */
+        .office-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 4px;
+        }
+
+        .office-card {
+            background: rgba(15,33,55,0.02);
+            border-radius: 8px;
+            padding: 12px 14px;
+            border: 1px solid rgba(15,33,55,0.05);
+        }
+
+        .office-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            border-bottom: 1.5px solid var(--secondary);
+            padding-bottom: 2px;
+            font-weight: 700;
+        }
+
+        .office-details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.72rem;
+        }
+
+        .office-details li strong { color: var(--primary); }
+
+        .page-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 5;
+        }
+
+        /* Footer */
+        .doc-footer {
+            border-top: 1px solid rgba(15,33,55,0.08);
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: #64748b;
+            font-weight: 500;
+            z-index: 5;
+        }
+
+        /* ── PDF Print styles ── */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                padding: 0;
+            }
+
+            .doc-container {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+                gap: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                width: 210mm;
+                height: 297mm;
+                page-break-after: always;
+                border: none;
+                border-radius: 0;
+                background: var(--cream) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .premium-header-card {
+                background: linear-gradient(135deg, #081220 0%, #162a45 100%) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .section-title-banner {
+                background: var(--accent-light) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page-corner-tr::before, .page-corner-bl::before {
+                background: var(--primary) !important;
+            }
+
+            .page-corner-tr::after, .page-corner-bl::after {
+                background: var(--secondary) !important;
+            }
+
+            .info-card {
+                background: var(--white) !important;
+            }
+
+            .special-badge {
+                background: rgba(15, 33, 55, 0.02) !important;
+            }
+
+            .office-card {
+                background: rgba(15,33,55,0.02) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="doc-container">
+
+    <!-- ── PAGE 1 ── -->
+    <div class="page">
+        <!-- Corner Geometries -->
+        <div class="page-corner-tr"></div>
+        <div class="page-corner-bl"></div>
+
+        <!-- ── PREMIUM HEADER CARD (TOP LEFT LOGO + EYE-CATCHING TEXT) ── -->
+        <header class="premium-header-card">
+            <div class="header-logo-container">
+                <img src="assets/images/logo.png" alt="DVK Global Logo" class="header-logo-img">
+            </div>
+            <div class="header-title-container">
+                <h1>DVK GLOBAL</h1>
+                <span class="subtitle">Corporate Profile</span>
+            </div>
+            <div class="header-meta-box">
+                <strong>LICENCE:</strong> IRDA/CORP/SLA-200048<br>
+                <strong>ESTD:</strong> 2018 &bull; <strong>MOB:</strong> +91 91217 27722<br>
+                <strong>EMAIL:</strong> office@dvkgisla.com
+            </div>
+        </header>
+
+        <div class="page-content" style="gap: 12px;">
+            <!-- Philosophy Banner -->
+            <div class="section-title-banner">Corporate Philosophy</div>
+
+            <div>
+                <h3>About Us</h3>
+                <p style="margin-top: 4px;">Established in 2018, DVK Global has evolved from a regional insurance surveying firm into a growing organization with ambitions to serve clients across India and international markets. Guided by a team of highly experienced directors, each possessing over 15 years of expertise in handling small, medium, and high-value claims, we provide comprehensive insurance survey and loss assessment services across Fire, Engineering, Marine Cargo, Motor, and Miscellaneous lines of business.</p>
+                <p>With the addition of specialized departments and experienced professionals, we are expanding our operations into major cities across India while maintaining our commitment to independence, transparency, technical excellence, and timely service.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h4>Our Mission</h4>
+                    <p style="margin-top: 3px;">To provide independent, transparent, and professional insurance survey and loss assessment services that protect the interests of both insurers and insured. We are committed to delivering accurate, fair, and timely assessments through technical expertise, ethical practices, and industry knowledge.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Our Vision</h4>
+                    <p style="margin-top: 3px;">To become one of India's most trusted Insurance Surveyor and Loss Assessor organizations with a strong Pan India presence and a growing international footprint.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 4px;">We aspire to create opportunities for young professionals by nurturing technical excellence, ethical leadership, and innovation, while delivering world-class insurance surveying and risk assessment services that contribute to a stronger global insurance ecosystem. Our long-term objective is to become a trusted partner for insurers, brokers, corporates, financial institutions, and insured clients by delivering accurate, unbiased, and professional claim assessment services that meet the highest industry standards.</p>
+
+            <!-- Values Banner -->
+            <div class="section-title-banner">Our Seven Core Values</div>
+            <p>These core values define our organizational culture and guide our assessments and operations:</p>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h4>Integrity</h4>
+                    <p>We uphold the highest ethical standards, ensuring impartiality, transparency, and fairness in every assignment.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Excellence</h4>
+                    <p>We pursue the highest standards of technical quality, professionalism, and continuous improvement.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="doc-footer">
+            <span>DVK Global &bull; Corporate Profile</span>
+            <span>Page 1</span>
+        </footer>
+    </div>
+
+
+    <!-- ── PAGE 2 ── -->
+    <div class="page">
+        <!-- Corner Geometries -->
+        <div class="page-corner-tr"></div>
+        <div class="page-corner-bl"></div>
+
+        <div class="page-content" style="gap: 16px;">
+            <div class="card-grid">
+                <div class="info-card">
+                    <h4>Accuracy</h4>
+                    <p>Every assessment is supported by detailed investigation, technical expertise, and factual evidence.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Timeliness</h4>
+                    <p>We deliver prompt and dependable services to facilitate faster claim settlements.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Innovation</h4>
+                    <p>We leverage modern technology, digital tools, and evolving industry practices to improve efficiency.</p>
+                </div>
+                <div class="info-card">
+                    <h4>People Development</h4>
+                    <p>We invest in developing talented professionals and creating future leaders in the industry.</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="width: 100%;">
+                <h4>Client Partnership</h4>
+                <p>We build lasting relationships through trust, responsiveness, and consistent service excellence.</p>
+            </div>
+
+            <!-- Services Banner -->
+            <div class="section-title-banner">Services &amp; Scope of Expertise</div>
+
+            <div>
+                <h3>Core Insurance Departments</h3>
+                <div class="card-grid" style="margin-top: 6px;">
+                    <div class="info-card">
+                        <h4>🔥 Fire Insurance</h4>
+                        <p>Assessment of property damage, stock losses, machinery losses, and business interruption arising from fire and allied perils.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>⚙️ Engineering Insurance</h4>
+                        <p>Survey and evaluation of machinery breakdown, erection risks, contractor risks, and electronic equipment.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🚢 Marine Cargo</h4>
+                        <p>Inspection, supervision, and assessment of transit losses involving imports, exports, and project cargo.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🚗 Motor Insurance</h4>
+                        <p>Assessment of private, commercial, heavy vehicle, and specialized motor claims.</p>
+                    </div>
+                </div>
+                <div class="info-card" style="width: 100%; margin-top: 10px;">
+                    <h4>📋 Miscellaneous Insurance</h4>
+                    <p>Evaluation of liability, burglary, money, fidelity guarantee, and other miscellaneous claims.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3>Specialized Services</h3>
+                <div class="special-badge-grid" style="margin-top: 6px;">
+                    <div class="special-badge">
+                        <strong>Risk Inspections</strong>
+                        <p>Identifying vulnerabilities and recommending preventive actions.</p>
+                    </div>
+                    <div class="special-badge">
+                        <strong>Predispatch</strong>
+                        <p>Ensuring quality and compliance before cargo dispatch.</p>
+                    </div>
+                    <div class="special-badge">
+                        <strong>Cargo Supervision</strong>
+                        <p>Monitoring handling and movement of cargo to minimize risk.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="doc-footer">
+            <span>DVK Global &bull; Corporate Profile</span>
+            <span>Page 2</span>
+        </footer>
+    </div>
+
+
+    <!-- ── PAGE 3 ── -->
+    <div class="page">
+        <!-- Corner Geometries -->
+        <div class="page-corner-tr"></div>
+        <div class="page-corner-bl"></div>
+
+        <div class="page-content" style="gap: 16px;">
+            <div>
+                <h3>Why Choose DVK Global</h3>
+                <div class="grid-2" style="margin-top: 6px;">
+                    <ul class="check-list">
+                        <li>Established in 2018 with consistent growth</li>
+                        <li>Leadership backed by 15+ years of industry expertise</li>
+                        <li>Multi-disciplinary team of professionals</li>
+                        <li>Expertise in Fire, Engineering, Marine, and Motor</li>
+                        <li>Independent, transparent, and unbiased assessments</li>
+                    </ul>
+                    <ul class="check-list">
+                        <li>Pan India expansion strategy with global vision</li>
+                        <li>Fast response and timely reporting</li>
+                        <li>Compliance with IRDAI regulations</li>
+                        <li>Customer-focused approach</li>
+                        <li>Commitment to quality and integrity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contacts Banner -->
+            <div class="section-title-banner">Our Professional Team &amp; Contacts</div>
+
+            <div>
+                <h3>Multidisciplinary Team</h3>
+                <p style="margin-bottom: 6px;">Our team comprises experienced professionals across various technical and financial disciplines:</p>
+                <div class="tags-wrap">
+                    <span class="team-tag">IRDAI Licensed Insurance Surveyors</span>
+                    <span class="team-tag">Registered Valuers</span>
+                    <span class="team-tag">Chartered Engineers</span>
+                    <span class="team-tag">Chartered Accountants</span>
+                    <span class="team-tag">Mechanical, Civil, Electrical &amp; Marine Engineers</span>
+                    <span class="team-tag">Risk Inspection Specialists</span>
+                    <span class="team-tag">Claims Management Professionals</span>
+                    <span class="team-tag">Technical Consultants</span>
+                </div>
+            </div>
+
+            <div>
+                <h3>Commitment to Quality</h3>
+                <p style="font-style: italic; border-left: 3px solid var(--secondary); padding-left: 12px;">Every assignment entrusted to us is handled with professionalism, technical competence, and complete impartiality. We are committed to delivering accurate assessments, maintaining strict confidentiality, and ensuring compliance with all applicable regulatory and industry standards.</p>
+            </div>
+
+            <div class="office-card-grid">
+                <div class="office-card">
+                    <h4>Corporate Office (Hyderabad)</h4>
+                    <ul class="office-details">
+                        <li>Flat no: 101, Venkat Nivas,</li>
+                        <li>KPHB Colony, Phase-5,</li>
+                        <li>Kukatpally, Hyderabad,</li>
+                        <li>Telangana State, India - 500 072</li>
+                        <li style="margin-top: 4px;"><strong>Mobiles:</strong> 91217 27722 / 76708 81108</li>
+                    </ul>
+                </div>
+                <div class="office-card">
+                    <h4>Branch Office (Visakhapatnam)</h4>
+                    <ul class="office-details">
+                        <li>Flat No: 110, A-Block,</li>
+                        <li>Sukriti Apartments, Sheelanagar,</li>
+                        <li>Visakhapatnam,</li>
+                        <li>Andhra Pradesh, India - 530 012</li>
+                        <li style="margin-top: 4px;"><strong>Emails:</strong> office@dvkgisla.com / claims@dvkgisla.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="doc-footer">
+            <span>DVK Global &bull; Corporate Profile</span>
+            <span>Page 3</span>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>
