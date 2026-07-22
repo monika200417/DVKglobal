@@ -887,7 +887,7 @@ svg {
 }
 
 .service-card {
-    background: var(--white);
+    background-color: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 36px 30px;
@@ -905,6 +905,7 @@ svg {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition);
+    z-index: 3;
 }
 
 .service-card:hover {
@@ -913,7 +914,29 @@ svg {
     border-color: rgba(0,149,218,0.25);
 }
 
+.service-card:hover h3, .service-card:hover p {
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8), 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
 .service-card:hover::before { transform: scaleX(1); }
+
+/* Overlay mask for background images */
+.service-card-mask {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color var(--transition);
+    z-index: 1;
+}
+
+.service-card:hover .service-card-mask {
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+.service-card-content {
+    position: relative;
+    z-index: 2;
+}
 
 .service-icon {
     width: 60px;
@@ -944,7 +967,7 @@ svg {
 .service-card:hover h3 { color: var(--blue); }
 
 .service-card p {
-    color: var(--text-light);
+    color: #000000;
     font-size: 0.94rem;
     line-height: 1.75;
     margin: 0;
@@ -1985,18 +2008,86 @@ svg {
 /* ============================================================
    HIGHLIGHTED VALUE CARDS
    ============================================================ */
-.values-detail-grid {
+/* ============================================================
+   VALUES TREE LAYOUT
+   ============================================================ */
+.values-tree-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 40px;
+    grid-template-columns: 1fr 260px 1fr;
+    align-items: center;
+    gap: 16px;
+    margin-top: 48px;
+    position: relative;
 }
 
-@media (max-width: 860px) {
-    .values-detail-grid { grid-template-columns: repeat(2, 1fr); }
+.values-tree-side {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
-@media (max-width: 520px) {
-    .values-detail-grid { grid-template-columns: 1fr; }
+
+.values-tree-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.values-tree-center svg {
+    width: 100%;
+    height: 420px;
+    filter: drop-shadow(0 4px 15px rgba(0, 149, 218, 0.15));
+}
+
+.tree-branch-line {
+    fill: none;
+    stroke: rgba(0, 149, 218, 0.35);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 5 4;
+    animation: flowDash 20s linear infinite;
+}
+
+@keyframes flowDash {
+    to { stroke-dashoffset: -200; }
+}
+
+.tree-trunk {
+    fill: none;
+    stroke: #c5a059;
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tree-leaf-node {
+    fill: #0095da;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 5px rgba(0, 149, 218, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.tree-leaf-node:hover {
+    transform: scale(1.25);
+}
+
+.values-tree-root-wrap {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .values-tree-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .values-tree-center {
+        display: none;
+    }
 }
 
 .value-card {
@@ -2029,23 +2120,6 @@ svg {
 }
 
 .value-card:hover::before { opacity: 1; }
-
-/* 7th card spans full remaining width */
-.value-card-wide {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.value-card-wide .value-card-emoji {
-    flex-shrink: 0;
-}
-
-.value-card-wide h4,
-.value-card-wide p {
-    margin: 0;
-}
 
 .value-card-emoji {
     width: 52px;
@@ -2226,7 +2300,35 @@ svg {
     white-space: nowrap;
 }
 
+
 @media (max-width: 860px) {
     .about-anim-wrap { width: 280px; height: 280px; }
     .anim-ring-3 { display: none; }
+}
+
+/* ── Redesigned Service Card Layout (Left Icon + Title, Full Background Image) ── */
+.service-card-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.service-card .service-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.service-card .service-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.service-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+    line-height: 1.3;
 }
