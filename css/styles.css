@@ -930,7 +930,7 @@ svg {
 }
 
 .service-card:hover .service-card-mask {
-    background-color: rgba(255, 255, 255, 0.40);
+    background-color: rgba(255, 255, 255, 0.20);
 }
 
 .service-card-content {
@@ -2331,4 +2331,87 @@ svg {
     font-size: 1.05rem;
     margin-bottom: 0;
     line-height: 1.3;
+}
+
+/* ── Redesigned Service Card Row Layout (Left Image, Right Content Card) ── */
+.service-row-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 28px;
+    margin-bottom: 36px;
+}
+
+.service-row-img-wrap {
+    flex: 0 0 38%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.service-row-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-row-card-wrap {
+    flex: 1;
+}
+
+.service-row-card-wrap .service-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.service-row-card-wrap .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+    z-index: 3;
+}
+
+.service-row-card-wrap .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0, 149, 218, 0.35);
+}
+
+.service-row-card-wrap .service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-row-card-wrap .service-card:hover h3, 
+.service-row-card-wrap .service-card:hover p {
+    text-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+    .service-row-layout {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+    .service-row-img-wrap {
+        flex: none;
+        width: 100%;
+        height: 200px;
+    }
 }

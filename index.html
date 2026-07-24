@@ -372,98 +372,127 @@
         <div style="margin-bottom:12px;">
             <span class="kicker" style="color:var(--blue);">Core Insurance Lines</span>
         </div>
-        <div class="service-grid stagger-children" style="margin-bottom:48px;">
-            <article class="service-card" style="background-image: url('assets/images/loss-adjustment.jpg'); background-size: cover; background-position: center;">
-                <div class="service-card-mask"></div>
-                <div class="service-card-content">
-                    <div class="service-card-title-wrap">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 21h12" />
-                                <path d="M5 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6" />
-                                <path d="M8 7h2M8 11h2M8 15h2" />
-                                <path d="M14 21c2.5 0 4.5-2 4.5-4.5 0-2.5-3-5.5-3-5.5s-.5 2.5-1.5 3.5c-1 1-1.5 2.5-1.5 3.5c0 1.5 1 3 1.5 3Z" />
-                                <path d="M14 21c1 0 1.5-.8 1.5-1.5 0-.8-1-1.8-1-1.8s-.2 1-.8 1.3c-.6.3-.7 1-.7 1.5c0 .5.5.5 1 .5Z" />
-                            </svg>
-                        </div>
-                        <h3>Fire Insurance</h3>
-                    </div>
-                    <p>Assessment of property damage, stock losses, machinery losses and business interruption arising from fire and allied perils.</p>
+        <div class="stagger-children" style="margin-bottom:48px; display: flex; flex-direction: column; gap: 30px;">
+            <!-- Fire Insurance Row -->
+            <div class="service-row-layout">
+                <div class="service-row-img-wrap">
+                    <img src="assets/images/loss-adjustment.jpg" alt="Fire Insurance">
                 </div>
-            </article>
-            <article class="service-card" style="background-image: url('assets/images/industrial-audit.jpg'); background-size: cover; background-position: center;">
-                <div class="service-card-mask"></div>
-                <div class="service-card-content">
-                    <div class="service-card-title-wrap">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4" />
-                                <path d="m16 8-6.5 6.5c-.8.8-2 .8-2.8 0s-.8-2 0-2.8L13.2 5.2" />
-                                <path d="M14.5 6.5c.5-.5 1.5-.7 2.2 0l1.3 1.3c.7.7.5 1.7 0 2.2L16 12" />
-                                <path d="M16.5 7.5s-.5.5-.5 1 .5.5 1 .5" />
-                            </svg>
+                <div class="service-row-card-wrap">
+                    <article class="service-card">
+                        <div class="service-card-title-wrap">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 21h12" />
+                                    <path d="M5 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6" />
+                                    <path d="M8 7h2M8 11h2M8 15h2" />
+                                    <path d="M14 21c2.5 0 4.5-2 4.5-4.5 0-2.5-3-5.5-3-5.5s-.5 2.5-1.5 3.5c-1 1-1.5 2.5-1.5 3.5c0 1.5 1 3 1.5 3Z" />
+                                    <path d="M14 21c1 0 1.5-.8 1.5-1.5 0-.8-1-1.8-1-1.8s-.2 1-.8 1.3c-.6.3-.7 1-.7 1.5c0 .5.5.5 1 .5Z" />
+                                </svg>
+                            </div>
+                            <h3>Fire Insurance</h3>
                         </div>
-                        <h3>Engineering Insurance</h3>
-                    </div>
-                    <p>Survey and evaluation of machinery breakdown, erection all risks, contractor's all risks, electronic equipment and industrial claims.</p>
+                        <p>Assessment of property damage, stock losses, machinery losses and business interruption arising from fire and allied perils.</p>
+                    </article>
                 </div>
-            </article>
-            <article class="service-card" style="background-image: url('assets/images/marine.png'); background-size: cover; background-position: center;">
-                <div class="service-card-mask"></div>
-                <div class="service-card-content">
-                    <div class="service-card-title-wrap">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="6" y="8" width="5" height="4" />
-                                <rect x="13" y="8" width="5" height="4" />
-                                <rect x="9" y="4" width="6" height="4" />
-                                <path d="M2 13h20l-2 5H4L2 13Z" />
-                                <path d="M1 20c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 5 1 3-1 5-1" />
-                            </svg>
+            </div>
+
+            <!-- Engineering Insurance Row -->
+            <div class="service-row-layout">
+                <div class="service-row-img-wrap">
+                    <img src="assets/images/industrial-audit.jpg" alt="Engineering Insurance">
+                </div>
+                <div class="service-row-card-wrap">
+                    <article class="service-card">
+                        <div class="service-card-title-wrap">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4" />
+                                    <path d="m16 8-6.5 6.5c-.8.8-2 .8-2.8 0s-.8-2 0-2.8L13.2 5.2" />
+                                    <path d="M14.5 6.5c.5-.5 1.5-.7 2.2 0l1.3 1.3c.7.7.5 1.7 0 2.2L16 12" />
+                                    <path d="M16.5 7.5s-.5.5-.5 1 .5.5 1 .5" />
+                                </svg>
+                            </div>
+                            <h3>Engineering Insurance</h3>
                         </div>
-                        <h3>Marine Cargo</h3>
-                    </div>
-                    <p>Inspection, supervision and assessment of transit losses involving imports, exports, inland transit and project cargo movements.</p>
+                        <p>Survey and evaluation of machinery breakdown, erection all risks, contractor's all risks, electronic equipment and industrial claims.</p>
+                    </article>
                 </div>
-            </article>
-            <article class="service-card" style="background-image: url('assets/images/motorimg.jpg'); background-size: cover; background-position: center;">
-                <div class="service-card-mask"></div>
-                <div class="service-card-content">
-                    <div class="service-card-title-wrap">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M7 6h10l1.5 4h-13L7 6Z" />
-                                <path d="M3 11h18c.6 0 1 .4 1 1v5c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-5c0-.6.4-1 1-1Z" />
-                                <rect x="4" y="13" width="3" height="2" rx="0.5" />
-                                <rect x="17" y="13" width="3" height="2" rx="0.5" />
-                                <path d="M9 14h6" />
-                                <rect x="5" y="18" width="2" height="2" />
-                                <rect x="17" y="18" width="2" height="2" />
-                            </svg>
+            </div>
+
+            <!-- Marine Cargo Row -->
+            <div class="service-row-layout">
+                <div class="service-row-img-wrap">
+                    <img src="assets/images/marine.png" alt="Marine Cargo">
+                </div>
+                <div class="service-row-card-wrap">
+                    <article class="service-card">
+                        <div class="service-card-title-wrap">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="6" y="8" width="5" height="4" />
+                                    <rect x="13" y="8" width="5" height="4" />
+                                    <rect x="9" y="4" width="6" height="4" />
+                                    <path d="M2 13h20l-2 5H4L2 13Z" />
+                                    <path d="M1 20c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 5 1 3-1 5-1" />
+                                </svg>
+                            </div>
+                            <h3>Marine Cargo</h3>
                         </div>
-                        <h3>Motor Insurance</h3>
-                    </div>
-                    <p>Assessment of private, commercial, heavy vehicle and specialized motor claims with prompt on-site inspection and reporting.</p>
+                        <p>Inspection, supervision and assessment of transit losses involving imports, exports, inland transit and project cargo movements.</p>
+                    </article>
                 </div>
-            </article>
-            <article class="service-card" style="background-image: url('assets/images/hero_quality.jpg'); background-size: cover; background-position: center;">
-                <div class="service-card-mask"></div>
-                <div class="service-card-content">
-                    <div class="service-card-title-wrap">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="12" rx="2" />
-                                <path d="M12 15v4M9 19h6" />
-                                <path d="M12 6s3 1 3 3v2c0 2-3 4-3 4s-3-2-3-4V9c0-2 3-3 3-3Z" />
-                                <path d="m10.5 9.5 1 1 2-2" />
-                            </svg>
+            </div>
+
+            <!-- Motor Insurance Row -->
+            <div class="service-row-layout">
+                <div class="service-row-img-wrap">
+                    <img src="assets/images/motorimg.jpg" alt="Motor Insurance">
+                </div>
+                <div class="service-row-card-wrap">
+                    <article class="service-card">
+                        <div class="service-card-title-wrap">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M7 6h10l1.5 4h-13L7 6Z" />
+                                    <path d="M3 11h18c.6 0 1 .4 1 1v5c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1v-5c0-.6.4-1 1-1Z" />
+                                    <rect x="4" y="13" width="3" height="2" rx="0.5" />
+                                    <rect x="17" y="13" width="3" height="2" rx="0.5" />
+                                    <path d="M9 14h6" />
+                                    <rect x="5" y="18" width="2" height="2" />
+                                    <rect x="17" y="18" width="2" height="2" />
+                                </svg>
+                            </div>
+                            <h3>Motor Insurance</h3>
                         </div>
-                        <h3>Miscellaneous Insurance</h3>
-                    </div>
-                    <p>Evaluation of liability, burglary, money, fidelity guarantee and other miscellaneous insurance claims with professional accuracy.</p>
+                        <p>Assessment of private, commercial, heavy vehicle and specialized motor claims with prompt on-site inspection and reporting.</p>
+                    </article>
                 </div>
-            </article>
+            </div>
+
+            <!-- Miscellaneous Insurance Row -->
+            <div class="service-row-layout">
+                <div class="service-row-img-wrap">
+                    <img src="assets/images/hero_quality.jpg" alt="Miscellaneous Insurance">
+                </div>
+                <div class="service-row-card-wrap">
+                    <article class="service-card">
+                        <div class="service-card-title-wrap">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="12" rx="2" />
+                                    <path d="M12 15v4M9 19h6" />
+                                    <path d="M12 6s3 1 3 3v2c0 2-3 4-3 4s-3-2-3-4V9c0-2 3-3 3-3Z" />
+                                    <path d="m10.5 9.5 1 1 2-2" />
+                                </svg>
+                            </div>
+                            <h3>Miscellaneous Insurance</h3>
+                        </div>
+                        <p>Evaluation of liability, burglary, money, fidelity guarantee and other miscellaneous insurance claims with professional accuracy.</p>
+                    </article>
+                </div>
+            </div>
         </div>
 
         <!-- Specialized Services -->
@@ -630,7 +659,7 @@
         <div class="section-head" style="margin-bottom:48px;">
             <span class="kicker">Leadership</span>
             <h2>Meet Our Technical Director</h2>
-            <p>Over 15 years of expertise in handling small, medium and high-value insurance claims across all major lines of business.</p>
+            <p>Over 30 years of expertise in handling small, medium and high-value insurance claims across all major lines of business.</p>
         </div>
 
         <div class="director-card">
@@ -657,9 +686,17 @@
                         <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                         76708 81108
                     </a>
+                    <a href="tel:+919440945805" class="director-contact-link">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                        94409 45805
+                    </a>
                     <a href="mailto:office@dvkgisla.com" class="director-contact-link">
                         <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
                         office@dvkgisla.com
+                    </a>
+                    <a href="mailto:claims@dvkgisla.com" class="director-contact-link">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m22 6-10 7L2 6"/></svg>
+                        claims@dvkgisla.com
                     </a>
                 </div>
             </div>
